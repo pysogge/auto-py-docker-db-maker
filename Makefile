@@ -1,6 +1,7 @@
 # define the name of the virtual environment directory
 VENV := py3venv
 CONFIGS := configs
+UTILS := utils
 
 # default target, when make executed without arguments
 all: venv
@@ -24,6 +25,7 @@ init: requirements.txt
 
 configs: venv
 	cp -n ./$(CONFIGS)/db_configs.yaml ./$(CONFIGS)/secret-db_configs.yaml 2> /dev/null
+	cp ./$(UTILS)/backup-configs.yaml ./$(CONFIGS)/db_configs.yaml 2> /dev/null
 
 # setup and start the database
 setup: venv
@@ -33,7 +35,7 @@ setup: venv
 # todo: seed the database
 # todo: clear the database
 
-# stop the database
+# stop the database container, but keep the persistent data
 stop: venv
 	./$(VENV)/bin/python3 docker_db.py -t
 
@@ -50,8 +52,8 @@ show: venv
 	./$(VENV)/bin/python3 docker_db.py -w
 
 # Stop the database container, but keep the image and persistent data
-close: venv
-	./$(VENV)/bin/python3 docker_db.py -t
+reimage: venv
+	./$(VENV)/bin/python3 docker_db.py -r
 
 # Stop the database, delete the image and persistent data, and remove the virtual environment
 clean:

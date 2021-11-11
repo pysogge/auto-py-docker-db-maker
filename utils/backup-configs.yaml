@@ -1,0 +1,7 @@
+ persistent_storage_area: db_storage_area
+ application_name: app_name
+ database_name: db_name
+ database_password: db_password
+ database_username: db_username
+ container_name: db_container_name
+ database_port: 5432
