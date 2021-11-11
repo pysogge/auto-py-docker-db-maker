@@ -5,10 +5,11 @@ It also creates a persistent data storage for the database on the host machine i
 
 The Makefile includes simple setup commands, as well as commands to view, start, stop, and remove the docker (while maintaining the host machine persistent storage), or to remove the docker and clean up (remove) the persistent data storage area if desired.
 
-## 0. Download Pre-Reqs
+## 0. Setup Pre-Reqs
+Ensure you have the following:
+-Linux/Unix with read/write access to ~/
 -Docker
 -Python3
--Linux/Unix with read/write access to ~/
 
 ## 1. Setup
 a. Edit configs file in configs/db_configs.yaml 
