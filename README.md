@@ -12,10 +12,11 @@ Ensure you have the following:
 -Python3
 
 ## 1. Setup
+
 a. Edit configs file in configs/db_configs.yaml 
 (optional if you want to leave defaults)
 
-b. Setup
+b. Initialize
 ```
 make init
 
@@ -44,13 +45,13 @@ make start
 make reimage
 ```
 
-d. Clean Up (wipe the persistent storage)
+e. Clean Up (wipe the persistent storage)
 ```
 #starts the container
 make clean
 ```
 
-e. Log into the Database
+f. Log into the Database
 ```
 Open a application like Postico to log into your database with the credentials from the config file, e.g.:
 
